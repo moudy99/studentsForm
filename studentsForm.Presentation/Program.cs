@@ -1,6 +1,10 @@
 using Microsoft.EntityFrameworkCore;
+using studentsForm.Application.Interfaces.Service;
+using studentsForm.Application.Interfaces.UnitOfWork;
 using studentsForm.Application.Mapping;
+using studentsForm.Application.Services;
 using studentsForm.Infrastructure;
+using studentsForm.Infrastructure.UnitOfWork;
 
 namespace studentsForm.Presentation
 {
@@ -21,6 +25,8 @@ namespace studentsForm.Presentation
           b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName))
 
   );
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+            builder.Services.AddScoped<IStudentService, StudentService>();
 
             var app = builder.Build();
 
@@ -37,7 +43,7 @@ namespace studentsForm.Presentation
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Student}/{action=AddStudent}/{id?}");
 
             app.Run();
         }

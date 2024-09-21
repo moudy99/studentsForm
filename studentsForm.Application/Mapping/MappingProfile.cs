@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using studentsForm.Application.ViewModel;
+using studentsForm.Core.Models;
 
 namespace studentsForm.Application.Mapping
 {
@@ -6,7 +8,8 @@ namespace studentsForm.Application.Mapping
     {
         public MappingProfile()
         {
-
+            CreateMap<AddStudentVM, Student>();
+            CreateMap<Subject, SubjectVM>().ReverseMap();
         }
     }
 }

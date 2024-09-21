@@ -1,0 +1,38 @@
+﻿form#addStudentForm {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+    form#addStudentForm h2 {
+        text-align: center;
+        color: #333;
+    }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
